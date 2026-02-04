@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Bao Bao ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: #fff;
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    /* Intro Screen */
+    .intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      animation: fadeOut 2s ease-in-out forwards;
+      animation-delay: 3s;
+    }
+
+    .intro h1 {
+      font-size: 3em;
+      animation: pop 1.5s infinite;
+    }
+
+    @keyframes pop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Main Card */
+    .card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 520px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      opacity: 0;
+      animation: showCard 1s ease forwards;
+      animation-delay: 3.2s;
+      position: relative;
+    }
+
+    @keyframes showCard {
+      to { opacity: 1; }
+    }
+
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+
+    .heart {
+      font-size: 3em;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      background: #ff4d6d;
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yesBtn {
+      left: 50%;
+      transform: translateX(-120%);
+    }
+
+    #noBtn {
+      left: 50%;
+      transform: translateX(20%);
+      background: #555;
+    }
+
+    .footer {
+      margin-top: 90px;
+      font-size: 1em;
+      opacity: 0.9;
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Intro -->
+  <div class="intro">
+    <h1>Hii Bao Bao 💕</h1>
+  </div>
+
+  <!-- Background Music -->
+  <iframe 
+    src="https://www.youtube.com/embed/6MGNQpGJm0k?autoplay=1&loop=1&playlist=6MGNQpGJm0k"
+    allow="autoplay">
+  </iframe>
+
+  <!-- Main Card -->
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h2>Bao Bao</h2>
+
+    <p>
+      From the moment you came into my life, everything felt warmer and brighter.
+      Your smile is my favorite place, and your heart feels like home.
+    </p>
+
+    <p>
+      自从你走进我的生活，一切都变得温暖又美好。
+      你的笑容，就是我的家。
+    </p>
+
+    <p>
+      This Valentine’s Day, I want to choose you —
+      today, tomorrow, and always.
+    </p>
+
+    <p><strong>Will you be my Valentine?</strong></p>
+    <p><strong>宝贝，你愿意做我的情人吗？</strong></p>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="alert('Bao Bao said YES 💖🥰')">
+        YES 💕
+      </button>
+
+      <button id="noBtn">
+        NO 😜
+      </button>
+    </div>
+
+    <div class="footer">
+      — With all my heart,<br>
+      <strong>DB</strong>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const card = document.querySelector(".card");
+      const maxX = card.offsetWidth - noBtn.offsetWidth;
+      const maxY = 60;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noBtn.style.left = randomX + "px";
+      noBtn.style.top = randomY + "px";
+    });
+  </script>
+
+</body>
+</html>
